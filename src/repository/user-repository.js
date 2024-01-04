@@ -25,6 +25,19 @@ class UserRepository{
             throw {error}
         }
     }
+
+    async getById(userId){
+        try {
+            const user = await User.findByPk(userId,{
+                attributes: ["email",'id']
+            });
+            //This will return the username and password.
+            return user;
+        } catch (error) {
+            console.log("Something went wrong in the repository layer.")
+            throw {error}
+        }
+    }
 }
 
 module.exports = UserRepository

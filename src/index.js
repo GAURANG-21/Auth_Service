@@ -5,6 +5,7 @@ const apiRoutes = require('./routes/index')
 const app = express();
 // const {User} = require('./models/index')
 // const bcrypt = require('bcrypt');
+// const UserRepository = require('./repository/user-repository')
 
 const prepareAndStartServer = ()=>{
 
@@ -14,10 +15,15 @@ const prepareAndStartServer = ()=>{
 
     app.listen(PORT, async()=>{
         console.log(`Server Started on Port:${PORT}`)
+
         // const incomingPassword = "123455548"
         // const user = await User.findByPk(3);
         // const response = bcrypt.compareSync(incomingPassword, user.password);
         // console.log(response)
+
+        // const userRepository = new UserRepository();
+        // const user = await userRepository.getById(2);
+        // console.log(user.dataValues)
     })
 }
 
