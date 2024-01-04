@@ -29,11 +29,24 @@ class UserService{
                 throw {error: "Incorrect password"}
             }
             //step 3-> If password matches
-            const newJWT = this.createToken({email: user.email,id: user.id});
+            const newJWT = this.createToken({email: user.email,id: user.id}); 
             return newJWT;
         } catch (error) {
             console.log("Something went wrong in the signIn process")
             throw error
+        }
+    }
+
+    async isAuthenticated(token){
+        try {
+            const isTokenVerified = this.verifyToken(token);
+            if(!isTokenVerified) throw {error: "Invalid token"}
+            const user = await this.userRepository.getById(isTokenVerified.id);
+            if(!user) throw {error: "No user with the corresponding token exist"}
+            return user.id;
+        } catch (error) {
+            console.log("Something went wrong in the service layer");
+            throw error;
         }
     }
 

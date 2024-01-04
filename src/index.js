@@ -6,7 +6,7 @@ const app = express();
 // const {User} = require('./models/index')
 // const bcrypt = require('bcrypt');
 // const UserRepository = require('./repository/user-repository')
-const UserService = require('./services/user-service')
+// const UserService = require('./services/user-service')
 
 const prepareAndStartServer = ()=>{
 
@@ -26,7 +26,7 @@ const prepareAndStartServer = ()=>{
         // const user = await userRepository.getById(2);
         // console.log(user.dataValues)
 
-        const userService = new UserService();
+        // const userService = new UserService();
         // const newToken = userService.createToken({email:"gaurang@gmail.com", id:"1"})
         // console.log("New token is:",newToken)
 
