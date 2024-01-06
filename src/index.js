@@ -7,6 +7,8 @@ const app = express();
 // const bcrypt = require('bcrypt');
 // const UserRepository = require('./repository/user-repository')
 // const UserService = require('./services/user-service')
+// const db = require('./models/index')
+const {User,Role} = require('./models/index')
 
 const prepareAndStartServer = ()=>{
 
@@ -33,6 +35,20 @@ const prepareAndStartServer = ()=>{
         // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhdXJhbmdAZ21haWwuY29tIiwiaWQiOiIxIiwiaWF0IjoxNzA0Mzg5MDY0LCJleHAiOjE3MDQzODkwNjR9.ka-WYutBS-xYAP6cmQ-sdNCycNYQqivWAwaKBY6XUIg'
         // const response = userService.verifyToken(token)
         // console.log(response)
+
+        // if(process.env.DB_SYNC){
+        //     db.sequelize.sync({alter:true})
+        // }
+
+        // const u1 = await User.findByPk(2);
+        // const r1 = await Role.findByPk(2);
+        // u1.addRole(r1);
+        // r1.addUser(u1)
+        // const response= await u1.getRoles();
+        // const response_role = await r1.getUsers();
+        // console.log(response)
+        // console.log(response_role)
+
     })
 }
 
