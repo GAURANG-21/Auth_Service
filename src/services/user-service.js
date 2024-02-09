@@ -78,6 +78,15 @@ class UserService{
             throw error;
         }
     }
+
+    isUserwithRole(userId, userRole){
+        try {
+            return this.userRepository.isUserwithRole(userId, userRole);
+        } catch (error) {
+            console.log("Something went wrong in the service layer")
+            throw error;
+        }
+    }
 }
 
 module.exports = UserService
