@@ -48,7 +48,9 @@ const prepareAndStartServer = ()=>{
         // const response_role = await r1.getUsers();
         // console.log(response)
         // console.log(response_role)
-
+        // const u1 = await User.findByPk(2);
+        // const roles = await u1.getRoles();
+        // console.log(roles)
     })
 }
 

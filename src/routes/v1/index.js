@@ -5,7 +5,6 @@ const router = express.Router();
 
 router.post('/signup',
             AuthRequestValidator.validateUserAuth,
-            EmailValidator.verify,
             UserController.create)
             
 router.post('/signin', 
