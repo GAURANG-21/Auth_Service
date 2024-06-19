@@ -9,7 +9,7 @@ router.post('/signup',
             
 router.post('/signin', 
             AuthRequestValidator.validateUserAuth,
-            EmailValidator.verify,
+            // EmailValidator.verify,
             UserController.signIn)
 
 router.get(

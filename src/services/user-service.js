@@ -34,7 +34,11 @@ class UserService{
             //step 3-> If password matches
             const newJWT = this.createToken({email: user.email,id: user.id}); 
             return newJWT;
-        } catch (error) {
+        } catch ({error}) {
+            if(error.name == 'AttributeNotFound')
+            {
+                throw error;
+            }
             console.log("Something went wrong in the signIn process")
             throw error
         }
